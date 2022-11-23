@@ -1,4 +1,4 @@
-import About from "./pages/About";
+import About from "./pages/AddRecipe";
 import RecipePage from "./pages/RecipePage";
 import Recipes from "./pages/Recipes";
 import Navigation from "./components/Navigation";
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/recipe">
           <RecipePage />
         </Route>
-        <Route path="/about">
+        <Route path="/addrecipe">
           <About />
         </Route>
       </Switch>
