@@ -1,10 +1,23 @@
 import { Link } from "react-router-dom";
 
-const RecipeItem = () => {
+const RecipeItem = (props) => {
+  const rec = props.recipe;
+  const urlStr = "/recipe/" + rec.id + "/";
+
   return (
     <>
-      <h2>One RecipeItem</h2>
-      <Link to="/recipe">RecipePage</Link>
+      <h3>
+        <Link
+          to={{
+            pathname: urlStr,
+            state: { recipe: rec },
+          }}
+        >
+          {rec.title}
+        </Link>
+      </h3>
+      <img alt={rec.title} src={rec.imgUrl}></img>
+      <p>{rec.content}</p>
     </>
   );
 };
