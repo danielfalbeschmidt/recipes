@@ -18,34 +18,37 @@ const RecipePage = () => {
   };
 
   const onDeleteHandler = async () => {
-    const recipeId = rec.id;
-    const response = await fetch(
-      "https://recipes-danielfalbeschmidt-default-rtdb.europe-west1.firebasedatabase.app/recipes.json/" +
-        recipeId,
-      {
-        method: "DELETE",
-        body: JSON.stringify(null),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    setDisplayModal(false);
+    try {
+      const response = await fetch(
+        "https://recipes-danielfalbeschmidt-default-rtdb.europe-west1.firebasedatabase.app/recipes/" +
+          rec.id,
+        {
+          method: "DELETE",
+        }
+      );
 
-    if (response.ok) {
+      if (!response.ok) {
+        throw new Error("Error: " + response.status + response.statusText);
+      }
+
       history.push("/");
-    } else {
-      const dialog = document.getElementById("dialog");
-      dialog.innerHTML = "An error has occured, please try again later";
-      dialog.style = "display:block";
+    } catch (error) {
+      const deleteErrorStatus = document.getElementById("deleteErrorStatus");
+      deleteErrorStatus.innerHTML =
+        "An error has occured, please try again later";
+      deleteErrorStatus.style = "display:block";
+
+      console.error(error);
     }
+
+    setDisplayModal(false);
   };
 
   return (
     <>
       <h2>{rec.title}</h2>
-      <p id="dialog" display="none"></p>
-      <img alt={rec.title} src={rec.imgUrl}></img>
+      <p id="deleteErrorStatus" display="none"></p>
+      <img className="recipeImg" alt={rec.title} src={rec.imgUrl}></img>
       <p>{rec.content}</p>
       <button onClick={deleteRecipeHandler}>Delete Recipe</button>
       {displayModal && (

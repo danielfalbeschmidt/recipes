@@ -3,6 +3,7 @@ import RecipePage from "./pages/RecipePage";
 import Recipes from "./pages/Recipes";
 import Navigation from "./components/Navigation";
 import { Route, Switch } from "react-router-dom";
+import "./index.css";
 
 const App = () => {
   return (

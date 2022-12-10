@@ -1,35 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif, 'Times New Roman';
 }
 
-h2 {
-  font-size: 1.5rem;
-  color: #2c292b;
-}
-
-.btn {
+.btn, button {
   font: inherit;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   border-radius: 4px;
-  background-color: #800040;
-  color: white;
-  border: 1px solid #800040;
+  background-color: transparent;
+  border: 1px solid #e99a6c;
   margin: 0 1rem;
 }
 
+button:hover,
 .btn:hover {
-  background-color: #9c1458;
-  border-color: #9c1458;
-}
-
-.btn--alt {
-  background-color: transparent;
-  color: #800040;
-}
-
-.btn--alt:hover {
-  background-color: #f8dae9;
+  transition: background-color 0.3s;
+  background-color: #e99a6c;
 }
 
 .modal {
@@ -53,4 +42,58 @@ h2 {
   height: 100vh;
   top: 0;
   left: 0;
+}
+
+.header {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #af663c;
+  padding: 0 10%;
+}
+
+.header h2 {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.header li {
+  margin-left: 3rem;
+  font-size: 1.5rem;
+}
+
+.header a {
+  text-decoration: none;
+  color: #f1dbce;
+}
+
+.header a:hover {
+  transition: color 0.5s;
+  color: white;
+}
+
+.header a:active,
+.header a.active {
+  color: white;
+}
+
+.recipeImg {
+  height: 30em;
+  width: auto;
+}
+
+.thumbnail {
+  height: 10em;
+  width: auto;
 }

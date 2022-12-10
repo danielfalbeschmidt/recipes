@@ -16,7 +16,7 @@ const RecipeItem = (props) => {
           {rec.title}
         </Link>
       </h3>
-      <img alt={rec.title} src={rec.imgUrl}></img>
+      <img className="thumbnail" alt={rec.title} src={rec.imgUrl}></img>
       <p>{rec.content}</p>
     </>
   );

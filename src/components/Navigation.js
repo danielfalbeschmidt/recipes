@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import "./Navigation.css";
 
 const Navigation = () => {
   return (
     <header className="header">
-      <h2>Recipes</h2>
+      <h1><Link to="/">Recipes</Link></h1>
       <nav>
         <ul>
           <li>
