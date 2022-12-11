@@ -56,12 +56,12 @@ const AddRecipe = () => {
   };
 
   return (
-    <>
-      <h2>Add New Recipe</h2>
-      <form onSubmit={submitHandler}>
+    <div>
+    <h2 className="pageHeader">Add New Recipe</h2>
+      <form className="addRecipeForm" onSubmit={submitHandler}>
         <div>
           <label htmlFor="title">Title</label>
-          <input id="title" type="text" ref={titleRef} onChange={hideStatus} />
+          <input id="title" type="text" ref={titleRef} onChange={hideStatus} maxLength="50"/>
         </div>
         <div>
           <label htmlFor="content">Content</label>
@@ -71,6 +71,7 @@ const AddRecipe = () => {
             rows="6"
             ref={contentRef}
             onChange={hideStatus}
+            maxLength="2000"
           ></textarea>
         </div>
         <div>
@@ -80,13 +81,14 @@ const AddRecipe = () => {
             type="text"
             ref={imgUrlRef}
             onChange={hideStatus}
+            maxLength="4000"
           />
         </div>
         <div>
           <button id="addRecipeStatus">Add Recipe</button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -5,8 +5,8 @@ const RecipeItem = (props) => {
   const urlStr = "/recipe/" + rec.id + "/";
 
   return (
-    <>
-      <h3>
+    <div className="recipeItem">
+      <h3 className="itemHeader">
         <Link
           to={{
             pathname: urlStr,
@@ -17,8 +17,7 @@ const RecipeItem = (props) => {
         </Link>
       </h3>
       <img className="thumbnail" alt={rec.title} src={rec.imgUrl}></img>
-      <p>{rec.content}</p>
-    </>
+    </div>
   );
 };
 

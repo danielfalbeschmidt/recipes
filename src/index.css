@@ -3,6 +3,34 @@
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif, 'Times New Roman';
+  color: #442512;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  transition: color 0.3s;
+  color: #8d5332;
+}
+
+.addRecipeForm {
+  margin: 0 auto; 
+  width: 250px;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.addRecipeForm div {
+  padding: .5em;
+}
+
+.addRecipeForm input, textarea {
+  font-size: .7em;
+  padding: .5em;
+  border: 1px solid #c55c1b;
+  border-radius: 3px;
 }
 
 .btn, button {
@@ -11,14 +39,18 @@
   cursor: pointer;
   border-radius: 4px;
   background-color: transparent;
-  border: 1px solid #e99a6c;
+  border: 1px solid #f0b492;
   margin: 0 1rem;
 }
 
 button:hover,
 .btn:hover {
   transition: background-color 0.3s;
-  background-color: #e99a6c;
+  background-color: #ffd7c1;
+}
+
+.deleteButton {
+  margin: 2em;
 }
 
 .modal {
@@ -54,6 +86,10 @@ button:hover,
   padding: 0 10%;
 }
 
+.header h1 {
+  font-size: 2.5rem;
+}
+
 .header h2 {
   font-size: 2rem;
   color: white;
@@ -70,11 +106,10 @@ button:hover,
 
 .header li {
   margin-left: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .header a {
-  text-decoration: none;
   color: #f1dbce;
 }
 
@@ -88,12 +123,73 @@ button:hover,
   color: white;
 }
 
+.itemHeader {
+  padding: 1em;
+  font-size: 2.3em;
+}
+
+.pageHeader {
+  color: #c55c1b;
+  font-size: 3em;
+  text-align: center;
+}
+
+.recipeContent {
+  margin: 0 2% 0 2%;
+  background-color: #fff6f1;
+  box-shadow: inset 0 0 30px #d3ab92;
+  border-radius: 3px;
+  padding: 3em;
+}
+
+.recipeContent p {
+  margin: 3em 6em 2em 6em;
+}
+
 .recipeImg {
-  height: 30em;
-  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 41em;
+  border-radius: 3px;
+  border: 1px solid #dfc5b6;
+}
+
+.recipeItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2% 1% 2%;
+  background-color: #fff6f1;
+  box-shadow: inset 0 0 30px #d3ab92;
+  border-radius: 3px;
 }
 
 .thumbnail {
+  margin: 1em;
   height: 10em;
   width: auto;
+  border-radius: 3px;
+  border: 1px solid #dfc5b6;
+}
+
+@media only screen and (max-width: 800px) {
+  .recipeImg {
+    width: 23em;
+  }
+  .recipeContent p {
+    margin: 1em;
+  }
+  .header h1 {
+    font-size: 2em;
+  }
+  .pageHeader {
+    font-size: 2.2em;
+  }
+  .thumbnail {
+    height: 7em;
+  }
+  .itemHeader {
+    font-size: 1.6em;
+  }
 }

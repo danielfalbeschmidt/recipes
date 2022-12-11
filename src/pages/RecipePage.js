@@ -46,20 +46,24 @@ const RecipePage = () => {
 
   return (
     <>
-      <h2>{rec.title}</h2>
+      <h2 className="pageHeader">{rec.title}</h2>
       <p id="deleteErrorStatus" display="none"></p>
-      <img className="recipeImg" alt={rec.title} src={rec.imgUrl}></img>
-      <p>{rec.content}</p>
-      <button onClick={deleteRecipeHandler}>Delete Recipe</button>
-      {displayModal && (
-        <>
-          <Modal
-            onDelete={onDeleteHandler}
-            onCancel={cancelDeleteRecipeHandler}
-          />
-          <Backdrop onClick={cancelDeleteRecipeHandler} />
-        </>
-      )}
+      <div className="recipeContent">
+        <img className="recipeImg" alt={rec.title} src={rec.imgUrl}></img>
+        <p>{rec.content}</p>
+        {displayModal && (
+          <>
+            <Modal
+              onDelete={onDeleteHandler}
+              onCancel={cancelDeleteRecipeHandler}
+            />
+            <Backdrop onClick={cancelDeleteRecipeHandler} />
+          </>
+        )}
+      </div>
+      <button className="deleteButton" onClick={deleteRecipeHandler}>
+        Delete Recipe
+      </button>
     </>
   );
 };

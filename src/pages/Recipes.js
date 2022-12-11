@@ -37,7 +37,7 @@ const Recipes = () => {
 
   return (
     <>
-      <h2>All Recipes</h2>
+      <h2 className="pageHeader">All Recipes</h2>
       <div>{RecipeItems}</div>
     </>
   );
